@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-	before_action :set_project, only: [:show, :edit, :udate, :destroy]
+	before_action :set_project, only: [:show, :edit, :update, :destroy]
 	def index
 		@projects = Project.all 
 	end 
@@ -27,7 +27,6 @@ class ProjectsController < ApplicationController
 	end 
 
 	def update 
-
 		if @project.update(project_params)
 			flash[:notice] = "Project has been updated"
 			redirect_to @project
