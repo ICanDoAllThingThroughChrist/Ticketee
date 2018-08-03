@@ -4,6 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+gem 'devise', '~> 4.2'
 gem 'actionpack'
 gem 'simple_form', '~> 3.5'
 gem "font-awesome-rails", "~> 4.3"
@@ -31,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
 gem 'nokogiri', '~> 1.8.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
