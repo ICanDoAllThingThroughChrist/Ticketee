@@ -4,10 +4,13 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'actionpack'
+gem 'simple_form', '~> 3.5'
+gem "font-awesome-rails", "~> 4.3"
+gem "bootstrap-sass", "~> 3.3"
+# Bundle edge Rails instead: 
+gem 'rails', '~> 5.1', '>= 5.1.4'
+#gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
