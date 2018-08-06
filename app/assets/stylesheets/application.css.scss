@@ -2,6 +2,8 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "projects";
+@import "tickets";
+@import "responsive";
 header {
     @extend .page-header;
     position: relative;
