@@ -3,6 +3,7 @@
 @import "font-awesome";
 @import "projects";
 @import "tickets";
+@import "admin/application";
 @import "responsive";
 header {
     @extend .page-header;
@@ -68,5 +69,6 @@ ul.actions {
     @media(max-width: 500px) {
         p { color: red }
     }
+ 
 
  
