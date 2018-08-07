@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.feature "_Project managers can_edit existing projects" do 
     let(:user) {FactoryGirl.create(:user)}
     let(:author)  {  FactoryGirl.create(:user) }
-    let(:project) { FactoryGirl.create(:project) }
+    let(:project) { FactoryGirl.create(:project, name: "Sublime Text 3") }
     let(:ticket) do
         FactoryGirl.create(:ticket, project: project, author: author)
     end
