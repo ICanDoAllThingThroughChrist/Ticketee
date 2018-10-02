@@ -1,5 +1,13 @@
 <div class="page-header">
-<h1><%= @project.name %></h1>
+<div id="ticket">
+    <header>
+        <h1><%= @project.name %></h1>
+    </header>
+    <header>
+        <h2><%= @ticket.name %></h2>
+    </header>
+        <%= simple_format(@ticket.description) %>
+</div>  
 
     <ul class="actions">
     <% if policy(@project).update?%>

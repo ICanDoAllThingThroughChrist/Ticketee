@@ -3,24 +3,27 @@ class TicketsController < ApplicationController
     before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 
     def show
+        binding.pry
         authorize @ticket, :show?
     end
 
     def create
         @ticket = @project.tickets.build(ticket_params)
         @ticket.author = current_user
+        authorize @ticket, :create?
         
         if @ticket.save
-        flash[:notice] = "Ticket has been created."
-        redirect_to [@project, @ticket]
+            flash[:notice] = "Ticket has been created."
+            redirect_to [@project, @ticket]
         else
-        flash.now[:alert] = "Ticket has not been created."
-        render "new"
+            flash.now[:alert] = "Ticket has not been created."
+            render "new"
         end
     end
 
     def new
         @ticket = @project.tickets.build
+        authorize @ticket, :create?
     end
 
     def edit 
@@ -45,7 +48,7 @@ class TicketsController < ApplicationController
 
     private
     def set_project
-    @project = Project.find(params[:project_id])
+        @project = Project.find(params[:project_id])
     end
 
     def set_ticket

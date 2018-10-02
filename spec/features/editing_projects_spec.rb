@@ -9,10 +9,10 @@ RSpec.feature "_Project managers can_edit existing projects" do
     end
     before do
         login_as(user)
-        assign_role!(user, :manager, project)
+        assign_role!(user, :viewer, project)
         FactoryGirl.create(:project, name: "Sublime Text 3")
-        visit "/"
-        click_link "Sublime Text 3"
+        # visit "/"
+        # click_link "Sublime Text 3"
         # click_link "Edit Project"
     end
 
